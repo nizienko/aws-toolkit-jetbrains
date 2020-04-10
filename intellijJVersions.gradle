@@ -2,7 +2,7 @@ static def ideProfiles() {
     return [
         "2019.2": [
             "guiTestFramework": "com.intellij.testGuiFramework:0.9.44.1@nightly",
-            "sinceVersion": "192",
+            "sinceVersion": "192.2840",
             "untilVersion": "192.*",
             "products" : [
                 "IC": [

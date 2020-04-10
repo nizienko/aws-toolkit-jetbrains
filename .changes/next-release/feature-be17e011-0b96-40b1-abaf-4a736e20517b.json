@@ -1,0 +1,4 @@
+{
+  "type" : "feature",
+  "description" : "Add ability to inject current AWS connection details as environment variables to Java run configurations (Application / Unit Test)"
+}
