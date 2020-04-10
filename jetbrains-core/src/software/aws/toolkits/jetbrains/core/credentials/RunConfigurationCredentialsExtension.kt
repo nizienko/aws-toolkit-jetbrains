@@ -21,9 +21,9 @@ import javax.swing.JComponent
 class RunConfigurationCredentialsExtension : RunConfigurationExtension() {
     override fun isApplicableFor(configuration: RunConfigurationBase<*>): Boolean = configuration is CommonJavaRunConfigurationParameters
 
-    override fun <T : RunConfigurationBase<*>?> updateJavaParameters(configuration: T, params: JavaParameters?, runnerSettings: RunnerSettings?) {
+    override fun <T : RunConfigurationBase<*>?> updateJavaParameters(configuration: T, params: JavaParameters, runnerSettings: RunnerSettings?) {
         val project = configuration?.getProject() ?: return
-        val environment = params?.env ?: return
+        val environment = params.env
 
         if (configuration.getCopyableUserData(RUN_CONFIGURATION_CREDENTIALS_KEY)?.useCurrentConnection != true) {
             return
