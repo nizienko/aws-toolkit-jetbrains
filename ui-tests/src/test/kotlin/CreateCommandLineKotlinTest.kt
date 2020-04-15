@@ -24,9 +24,17 @@ class CreateCommandLineKotlinTest {
 
     @AfterEach
     fun closeProject() = uiTest {
-        idea {
-            actionMenu("File").click()
-            actionMenuItem("Close Project").click()
+        val cancelButtons: () -> List<ComponentFixture> = {
+            findAll(byXpath("//div[@class='JButton' and @text='Cancel']"))
+        }
+        while (cancelButtons().isNotEmpty()) {
+            cancelButtons().first().click()
+        }
+        if (findAll<WelcomeFrame>().isEmpty()) {
+            idea {
+                actionMenu("File").click()
+                actionMenuItem("Close Project").click()
+            }
         }
     }
 
