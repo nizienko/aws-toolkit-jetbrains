@@ -18,9 +18,11 @@ intellij {
     downloadSources = parentIntellijTask.downloadSources
     plugins = idePlugins("IU")
 }
+downloadRobotServerPlugin.version = remoteRobotVersion
+
 
 test {
-    systemProperty("log.dir", "${org.jetbrains.intellij.Utils.systemDir(project.intellij.sandboxDirectory, true)}/logs")
+    systemProperty("log.dir", "${project.intellij.sandboxDirectory}-test/logs")
 }
 
 runIde {
