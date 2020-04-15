@@ -63,7 +63,7 @@ class RunConfigurationCredentialsSettingsEditor<T : RunConfigurationBase<*>?> : 
             useCurrentConnection = checkBox(
                 message("run_configuration_extension.inject_aws_connection.label"),
                 comment = message("run_configuration_extension.inject_aws_connection.comment")
-            )
+            ).component
         }
     }
 
